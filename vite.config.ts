@@ -7,7 +7,8 @@ export default defineConfig({
   // build後のfileのpathを解決する為に必要
   base: "./",
   build: {
-    outDir: "../dist",
+    outDir: "./../dist",
+    emptyOutDir: true,
   },
   plugins: [react()],
 });
