@@ -8,6 +8,7 @@ export default defineConfig(({mode}) => {
   return {
     root: "src",
     base: "./",
+     envDir: "../config/.env",
     build: {
       outDir: `./../dist/${buildName}/`,
       emptyOutDir: true,

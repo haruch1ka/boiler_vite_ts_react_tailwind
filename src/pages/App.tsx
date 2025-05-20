@@ -1,16 +1,16 @@
-import MainpageContents from "../components/MainpageContents.js";
+import AppContents from "../components/AppContents.js";
 import AppHeader from "../components/AppHeader.js";
 import AppFooter from "../components/AppFooter.js";
 import "../styles/tailwind.css";
 
-function MainPage() {
+function App() {
   return (
     <>
       <AppHeader />
-      <MainpageContents />
+      <AppContents />
       <AppFooter />
     </>
   );
 }
 
-export default MainPage;
+export default App;
