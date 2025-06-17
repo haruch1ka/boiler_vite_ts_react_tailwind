@@ -53,6 +53,10 @@ pnpm build
 pnpm lint
 ```
 
+### envファイルについて
+
+必要であれば、`config/.env`に変数`VITE_BUILD_NAME`を定義しておくとその名前でbuildされる
+
 ## プロジェクト構造
 
 ```
