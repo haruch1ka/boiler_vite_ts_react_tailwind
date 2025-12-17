@@ -1,6 +1,6 @@
 # このプロジェクトは何？
 
-taihoDigitalContentsのコンテンツページ、及びコンテンツをモノリシックに管理するためのプロジェクト。
+vite + react + ts + tailwind を構成するためのboilerplate
 githubAction対応。(手動で設定する必要アリ)
 
 # フォルダ構成
