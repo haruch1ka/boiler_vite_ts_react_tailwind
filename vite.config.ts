@@ -2,17 +2,25 @@ import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
 // https://vite.dev/config/
-export default defineConfig(({mode}) => {
-  const env = loadEnv(mode, process.cwd(), "/config");
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd() + "/config", "");
   const buildName = env.VITE_BUILD_NAME || "myApp";
+  const htlmlPlugin = () => ({
+    name: "html-transform",
+    transformIndexHtml: (html: string): string => html.replace(/%=(.*?)%/g, (match, p1) => env[p1] ?? match),
+  });
   return {
     root: "src",
     base: "./",
-     envDir: "../config/.env",
+    envDir: "../config",
+    define: {
+      "import.meta.env.VITE_UNITY_PATH": JSON.stringify(env.VITE_UNITY_PATH),
+    },
     build: {
       outDir: `./../dist/${buildName}/`,
       emptyOutDir: true,
     },
-    plugins: [react()],
+    plugins: [htlmlPlugin(), react()],
+    publicDir: "../public",
   };
 });
