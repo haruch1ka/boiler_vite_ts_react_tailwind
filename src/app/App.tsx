@@ -1,4 +1,4 @@
-import Top from "../components/page/Top/Top.tsx";
+import Top from "../components/pages/Top/Top.tsx";
 import "../styles/tailwind.css";
 
 function App() {
